@@ -13,27 +13,27 @@ var smartphone = {
     model: "Galaxy",
     version: "S21",
     color: "white, black, grey",
-    battery: 4000,
+    battery: (4000, "mAh"),
+    storage: (128, "GB"),
+    processor: "Qualcomm",
+    graphics: "Adreno",
     size: {
         length: 6.2,
         width: 3.5,
     },
-    display: {
-        screenHW: {
-            "Dynamic AMOLED",
-            screenRES: {
-                pixelL: 2400,
-                pixelW: 1080
-                screenRatio: ["20:9"],
-                PPI: 441,
-            },
-        },
-        processor: "Qualcomm",
-        graphics: "Adreno",
-        fullName: function phoneName() {
-            return (this.name + " " + this.model + " " + this.version);
-        },
 
+    display: {
+        screenHW: "Dynamic AMOLED",
+        screenRES: {
+            pixelL: 2400,
+            pixelW: 1080,
+            screenRatio: ["20:9"],
+            PPI: 441,
+        },
+    },
+
+    fullName: function phoneName() {
+        return (this.name + " " + this.model + " " + this.version);
     },
 };
 
