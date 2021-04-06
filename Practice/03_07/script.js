@@ -17,12 +17,12 @@ var device = {
     color: "white, black, grey",
 
     price: {
-        usd: (800, "US$"),
-        cad: (1000, "CAD$"),
-        eur: (849, "€"),
-        inr: (69000, "RS"),
-        cny: (6300, "CNY"),
-        krw: (1379360, "KRW"),
+        usd: ("800 US$"),
+        cad: ("1000 CAD$"),
+        eur: ("849 €"),
+        inr: ("69000 RS"),
+        cny: ("6300 CNY"),
+        krw: ("1379360 KRW"),
     },
     camera: {
         rear1: (12, "MP"),
@@ -68,8 +68,12 @@ var device = {
     fullName: function phoneName() {
         return this.name + " " + this.series + " " + this.version
     },
+    devicePrice: function prices() {
+        return this.price
+    },
 
 };
 
 
 console.log("The device name is", device.fullName());
+console.log("The device prices are", device.devicePrice());
