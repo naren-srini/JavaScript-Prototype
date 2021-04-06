@@ -13,10 +13,29 @@ var smartphone = {
     model: "Galaxy",
     version: "S21",
     color: "white, black, grey",
+    price: {
+        usd: (800, "US$"),
+        cad: (1000, "CAD$"),
+        eur: (849, "€"),
+        inr: (69000, "RS"),
+        cny: (6300, "CNY"),
+        krw: (1379360, "KRW"),
+    },
+    camera: {
+        rear1: (12, "MP"),
+        rear2: (64, "MP"),
+        rear3: (12, "MP"),
+        front: (10, "MP"),
+    },
     battery: (4000, "mAh"),
-    storage: (128, "GB"),
-    processor: "Qualcomm",
-    graphics: "Adreno",
+    RAM: (8, "GB LPDDR5"),
+    storage: (128, "GB (UFS 3.0)"),
+    processor: {
+        manufacturer: "Qualcomm",
+        series: "Snapdragon",
+        model: 888,
+        graphics: "Adreno",
+    },
     size: {
         length: 6.2,
         width: 3.5,
@@ -24,6 +43,7 @@ var smartphone = {
 
     display: {
         screenHW: "Dynamic AMOLED",
+        refreshRate: (120, "Hz"),
         screenRES: {
             pixelL: 2400,
             pixelW: 1080,
@@ -35,6 +55,8 @@ var smartphone = {
     fullName: function phoneName() {
         return (this.name + " " + this.model + " " + this.version);
     },
+
+
 };
 
 console.log("The name of object:", smartphone.fullName("phoneName"));
