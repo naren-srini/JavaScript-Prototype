@@ -14,23 +14,24 @@
  */
 
 const frogpack = {
-  name: "Frog Backpack",
-  volume: 8,
-  color: "green",
-  pocketNum: 3,
-  strapLength: {
-    left: 10,
-    right: 10,
-  },
-  lidOpen: false,
-  image: "../../assets/images/frog.svg",
-  toggleLid: function (lidStatus) {
-    this.lidOpen = lidStatus;
-  },
-  newStrapLength: function (lengthLeft, lengthRight) {
-    this.strapLength.left = lengthLeft;
-    this.strapLength.right = lengthRight;
-  },
+    name: "Frog Backpack",
+    volume: 8,
+    color: "green",
+    pocketNum: 3,
+    strapLength: {
+        left: 10,
+        right: 10,
+    },
+    lidOpen: false,
+    image: "../../assets/images/frog.svg",
+    description: "This is our new green frog kids backpack",
+    toggleLid: function(lidStatus) {
+        this.lidOpen = lidStatus;
+    },
+    newStrapLength: function(lengthLeft, lengthRight) {
+        this.strapLength.left = lengthLeft;
+        this.strapLength.right = lengthRight;
+    },
 };
 
 // Baseline HTML output
@@ -57,3 +58,33 @@ const content = `
       }</span></li>
     </ul>  
 `;
+
+// Here we create the Main Function
+// Adding figure
+// Activity: Recieves dataObj, Creates figure, Returns figure
+
+const insertFigure = (dataObj) => {
+    let newFigure = document.createElement("figure");
+    let newImage = document.createElement("img");
+    newImage.setAttribute("src", dataObj.image);
+    newImage.setAttribute("alt", "");
+    let newDescription = document.createElement("Backpack");
+    newDescription.innerText = dataObj.description;
+    newFigure.append(newImage, newDescription);
+    return newFigure;
+};
+
+/** Here we are creating the article function
+            Activity: Receives backpack obj
+            creates <article>, calls insertFigure(), returns <article>
+        */
+
+const createArticle = (frogpack) => {
+    let newArticle = document.createElement("Article-1");
+    newArticle.innerHTML = content;
+    newArticle.prepend(insertFigure(frogpack));
+    return newArticle;
+};
+
+// Here we pass the query to the functions
+document.querySelector("main").append(createArticle(frogpack));
