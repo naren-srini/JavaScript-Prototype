@@ -17,13 +17,20 @@ const greenPack = {
     price: 25,
     weight: 1.5,
     price_in_inr: 0,
-    newVolume: function(price) {
+    newVolume: function(volume) {
+        console.log("this.volume in the method:", this.volume);
+        this.volume = volume;
+        console.log("this.volume in the method UPDATE:", this.volume);
+        (function() {
+            console.log("this.volume in nested function:", this.volume);
+        })();
+    },
+    newPrice: function(price) {
         console.log("Price in the CAD method:", this.price);
+
         this.price_in_inr = price * window.inr;
+        console.log("After the method in CAD:", this.price);
         console.log("New price in inr:", this.price_in_inr);
-        // (function () {
-        //   console.log("this.price in nested function:", this.price);
-        // })();
     },
 };
 
