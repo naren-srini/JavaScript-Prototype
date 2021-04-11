@@ -16,11 +16,11 @@ const greenPack = {
     pocketNum: 3,
     price: 25,
     weight: 1.5,
-
+    price_in_inr: 0,
     newVolume: function(price) {
-        console.log("this.price in the method:", this.price);
-        this.price = price * window.inr;
-        console.log("this.price New price after update:", this.price);
+        console.log("Price in the CAD method:", this.price);
+        this.price_in_inr = price * window.inr;
+        console.log("New price in inr:", this.price_in_inr);
         // (function () {
         //   console.log("this.price in nested function:", this.price);
         // })();
