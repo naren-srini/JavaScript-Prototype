@@ -6,20 +6,25 @@
 
 // Define a default volume for the window (the entire DOM):
 window.volume = 20;
+window.price = 25;
+window.inr = 55;
 
 const greenPack = {
-  name: "Frog Pack",
-  color: "green",
-  volume: 8,
-  pocketNum: 3,
-  newVolume: function (volume) {
-    console.log("this.volume in the method:", this.volume);
-    this.volume = volume;
-    console.log("this.volume after update:", this.volume);
-    // (function () {
-    //   console.log("this.volume in nested function:", this.volume);
-    // })();
-  },
+    name: "Tactical Pack",
+    color: "green",
+    volume: 10,
+    pocketNum: 3,
+    price: 25,
+    weight: 1.5,
+
+    newVolume: function(price) {
+        console.log("this.price in the method:", this.price);
+        this.price = price * window.inr;
+        console.log("this.price New price after update:", this.price);
+        // (function () {
+        //   console.log("this.price in nested function:", this.price);
+        // })();
+    },
 };
 
 console.log(greenPack.newVolume(5));
